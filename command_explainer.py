@@ -1,19 +1,24 @@
 import requests
 import dotenv
 import os
+# import json
 
 dotenv.load_dotenv()
 llama_api_url = os.getenv("LLAMA_API_URL")
 
 
 def explain_command(command):
+    # with open("sample_response.json", "r") as f:
+    #     sample_response = json.load(f)
+    # print(sample_response["completion_message"]["content"]["text"])
+
     prompt = f"Explain this shell command in simple English:\n{command}"
     headers = {
         "Authorization": f"Bearer {os.getenv('LLAMA_API_KEY')}",
         "Content-Type": "application/json",
     }
     data = {
-        "model": "llama3-70b-chat",
+        "model" : os.getenv('LLAMA_MODEL'),
         "messages": [
             {
                 
@@ -21,6 +26,7 @@ def explain_command(command):
             "content": prompt
             }
         ],
+        "max_completion_tokens": 256,
     }
     
     response = requests.post(
@@ -29,7 +35,7 @@ def explain_command(command):
         json=data)
     response.raise_for_status()
     result = response.json()
-    print(result)
+    print(f"Explanation: {result["completion_message"]["content"]["text"]}")
 
 
 if __name__ == "__main__":
