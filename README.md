@@ -23,3 +23,6 @@ pip install -r requirements.txt
 ```bash
 export LLAMA_API_KEY="your_api_key_here"
 ```
+### Example
+
+<img width="865" height="437" alt="Screenshot 2025-08-09 at 3 18 24 PM" src="https://github.com/user-attachments/assets/a9e2fbd1-36ff-4c07-a68d-66a9e89248f7" />
