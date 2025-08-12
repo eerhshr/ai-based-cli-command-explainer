@@ -12,7 +12,7 @@ def explain_command(command):
     #     sample_response = json.load(f)
     # print(sample_response["completion_message"]["content"]["text"])
 
-    prompt = f"Explain this shell command in simple English:\n{command}"
+    prompt = f"Explain this cli command in simple English:\n{command}"
     headers = {
         "Authorization": f"Bearer {os.getenv('LLAMA_API_KEY')}",
         "Content-Type": "application/json",
@@ -39,5 +39,5 @@ def explain_command(command):
 
 
 if __name__ == "__main__":
-    command = input("Enter a shell command to explain: ")
+    command = input("Enter a command to explain: ")
     explain_command(command)
