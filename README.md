@@ -1,6 +1,6 @@
 ## CLI Command Explainer with LLaMA
 
-A command-line tool that takes any shell commands provided and generates a clear, human-friendly explanation of what it does using LLaMA API.
+A command-line tool that takes commands provided and generates a clear, human-friendly explanation of what it does using LLaMA API.
 
 
 ### Installation
